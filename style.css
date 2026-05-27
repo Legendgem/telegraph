@@ -1,0 +1,17 @@
+:root { --bg: #0d1117; --panel: #161b22; --accent: #58a6ff; --text: #c9d1d9; --success: #3fb950; --warn: #f85149; }
+body { background: var(--bg); color: var(--text); font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; }
+#app { width: 95%; max-width: 380px; height: 92vh; background: var(--panel); border-radius: 24px; display: flex; flex-direction: column; padding: 20px; box-sizing: border-box; border: 1px solid #30363d; position: relative; }
+#guide-toggle { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 8px; border-radius: 8px; font-size: 0.7rem; margin-bottom: 10px; }
+.display-area { flex: 1; background: #000; border-radius: 12px; padding: 15px; margin-bottom: 10px; display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start; border: 1px inset #30363d; overflow-y: auto; }
+.word-box { background: rgba(88, 166, 255, 0.15); border: 1px solid var(--accent); color: white; padding: 2px 8px; border-radius: 4px; font-family: monospace; }
+#morse-buffer { font-family: monospace; color: var(--accent); text-align: center; height: 1.5rem; margin-bottom: 10px; }
+#pad { width: 140px; height: 140px; border-radius: 50%; border: 5px solid var(--accent); background: transparent; color: var(--accent); font-weight: bold; touch-action: none; margin: auto; }
+#pad:active { background: var(--accent); color: white; transform: scale(0.95); }
+.controls { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+button:not(#pad, #guide-toggle) { padding: 12px 2px; background: #21262d; border: 1px solid #30363d; color: white; border-radius: 8px; font-size: 0.7rem; }
+#morse-guide { position: absolute; top: 5%; left: 5%; right: 5%; bottom: 5%; background: #1c2128; border: 2px solid var(--accent); border-radius: 15px; padding: 15px; z-index: 1000; overflow-y: auto; display: flex; flex-direction: column; }
+.morse-table { width: 100%; border-collapse: collapse; }
+.morse-table td { padding: 8px 4px; color: white; font-size: 0.75rem; width: 33%; border-bottom: 1px solid #30363d; }
+.morse-table b { color: var(--accent); float: right; font-family: monospace; }
+.hidden { display: none !important; }
+.your-turn { color: var(--success); }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Telegraph</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d1117">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <button id="guide-toggle">📖 MORSE GUIDE</button>
+        <div class="status-bar">
+            <span>SIGNAL: ACTIVE</span>
+            <span id="turn-indicator" class="your-turn">YOUR TURN</span>
+        </div>
+        <div id="text-output" class="display-area"><span id="current-typing"></span></div>
+        <div id="morse-buffer"></div>
+        <div class="telegraph-zone"><button id="pad">TAP / HOLD</button></div>
+        <div class="controls">
+            <button id="over-btn">OVER</button>
+            <button id="nudge-btn" disabled>NUDGE</button>
+            <button id="backspace-btn">BACK</button>
+            <button id="clear-btn">CLEAR</button>
+        </div>
+        <div id="morse-guide" class="hidden">
+            <h3>MORSE REFERENCE</h3>
+            <table class="morse-table">
+                <tr><td>A <b>.-</b></td><td>B <b>-...</b></td><td>C <b>-.-.</b></td></tr>
+                <tr><td>D <b>-..</b></td><td>E <b>.</b></td><td>F <b>..-.</b></td></tr>
+                <tr><td>G <b>--.</b></td><td>H <b>....</b></td><td>I <b>..</b></td></tr>
+                <tr><td>J <b>.---</b></td><td>K <b>-.-</b></td><td>L <b>.-..</b></td></tr>
+                <tr><td>M <b>--</b></td><td>N <b>-.</b></td><td>O <b>---</b></td></tr>
+                <tr><td>P <b>.--.</b></td><td>Q <b>--.-</b></td><td>R <b>.-.</b></td></tr>
+                <tr><td>S <b>...</b></td><td>T <b>-</b></td><td>U <b>..-</b></td></tr>
+                <tr><td>V <b>...-</b></td><td>W <b>.--</b></td><td>X <b>-..-</b></td></tr>
+                <tr><td>Y <b>-.--</b></td><td>Z <b>--..</b></td><td>1 <b>.----</b></td></tr>
+                <tr><td>2 <b>..---</b></td><td>3 <b>...--</b></td><td>4 <b>....-</b></td></tr>
+                <tr><td>5 <b>.....</b></td><td>6 <b>-....</b></td><td>7 <b>--...</b></td></tr>
+                <tr><td>8 <b>---..</b></td><td>9 <b>----.</b></td><td>0 <b>-----</b></td></tr>
+            </table>
+            <button id="guide-close">CLOSE</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
